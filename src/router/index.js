@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import BookView from '../views/BookView.vue'
+import newBook from '../views/newBook.vue'
+import editBook from '../views/editBook.vue'
+
+
 
 Vue.use(VueRouter)
 
@@ -9,6 +14,21 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/book',
+    name: 'bookview',
+    component: BookView
+  },
+  {
+    path: '/newBook',
+    name: 'newBook',
+    component : newBook
+  },
+  {
+    path: 'editBook',
+    name: 'editBook',
+    component: editBook
   },
   {
     path: '/about',

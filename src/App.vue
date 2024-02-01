@@ -1,12 +1,29 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
-</template>
+    <v-app>
+    <div>
+      <navbar />
+      <v-main id="main">
+        <router-view/>
+      </v-main>
+      <!--<FooTer />-->
+    </div>
+    </v-app>
+  </template>
+  
+
+<script>
+import navbar from './components/navbar.vue'
+//import FooTer from './components/footer.vue'
+export default {
+    name: 'app',
+    components: {
+        navbar,
+        //FooTer
+    }
+}
+
+
+</script>
 
 <style>
 #app {
@@ -15,8 +32,23 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: rgb(226, 225, 225);
+}
+#card {
+    background-color: #B2DFDB ;
+    
+}
+#div {
+    margin-left:15%;
+    margin-right:15%;
+    margin-top:5%;
+    margin-bottom:15%
 }
 
+/* #btn {
+    background-color: #464646;
+    color:white;
+} */
 nav {
   padding: 30px;
 }
