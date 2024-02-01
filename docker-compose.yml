@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  vue-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+    command: vue ui --headless --port 8000 --host 0.0.0.0
+    container_name: vue-ui-v2
+  vue-json:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run backend
+    container_name: vue-json-v2
